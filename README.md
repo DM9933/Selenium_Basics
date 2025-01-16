@@ -106,15 +106,144 @@ public void closeChromeBrowser(){
   - [testng](https://mvnrepository.com/artifact/org.testng/testng)
 ---
 
-### Lecture 2: Cross Browser Testing and TestNG
-- **Cross Browser Testing**:
-  - [Dynamic Browser Configuration](browser/CrossBrowserInit.java)
-  - **Headless Mode Testing**:
-    - [Chrome Headless](browser/HeadlessChrome.java)
-- **TestNG Lifecycle**:
-  - `@BeforeSuite`, `@BeforeTest`, `@BeforeClass`, `@BeforeMethod`, `@Test`, `@AfterMethod`, `@AfterClass`, `@AfterTest`, `@AfterSuite`
-- **Browser Commands**:
-  - [Browser Command Examples](browserCommand/BrowserCommandExample.java)
+## Lecture 2: Cross Browser Testing and TestNG
+
+### Cross Browser Testing
+#### Dynamic Browser Configuration
+
+```
+@BeforeSuite
+public void startBrowser(){
+    String browser = System.getProperty("browser", "");
+
+    if(browser.equals("chrome")){
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+    } else if(browser.equals("firefox")){
+        WebDriverManager.firefoxdriver().setup();
+        driver = new FirefoxDriver();
+        driver.manage().window().maximize();
+    } else {
+        WebDriverManager.edgedriver().setup();
+        driver = new EdgeDriver();
+        driver.manage().window().maximize();
+    }
+}
+```
+Description: Configures the browser dynamically based on the system property passed (e.g., chrome, firefox, edge).
+
+### Headless Mode Testing
+```
+@BeforeSuite
+public void openBrowser(){
+    WebDriverManager.chromedriver().setup();
+    ChromeOptions options = new ChromeOptions();
+    options.addArguments("--headless=new");
+
+    driver = new ChromeDriver(options);
+    driver.manage().window().maximize();
+}
+```
+Description: Initializes Chrome browser in headless mode (without UI) to run tests without a graphical interface.
+
+### TestNG Lifecycle
+@BeforeSuite: Runs before the entire suite starts.
+```
+@BeforeSuite
+public void beforeSuiteExample(){
+    System.out.println("BeforeSuite Example");
+}
+```
+@BeforeTest: Runs before the first test method is invoked.
+```
+@BeforeTest
+public void beforeTestExample(){
+    System.out.println("BeforeTest Example");
+}
+```
+@BeforeClass: Runs before the first method of the class is invoked.
+```
+@BeforeClass
+public void beforeClassExample(){
+    System.out.println("BeforeClass Example");
+}
+```
+@BeforeMethod: Runs before each test method.
+```
+@BeforeMethod
+public void beforeMethodExample(){
+    System.out.println("BeforeMethod Example");
+}
+```
+@Test: The actual test method.
+```
+@Test(priority = 1)
+public void testExample(){
+    System.out.println("Test Example");
+}
+```
+@AfterMethod: Runs after each test method.
+```
+@AfterMethod
+public void afterMethodExample(){
+    System.out.println("AfterMethod Example");
+}
+```
+@AfterClass: Runs after the last method of the class.
+```
+@AfterClass
+public void afterClassExample(){
+    System.out.println("AfterClass Example");
+}
+```
+@AfterTest: Runs after all the test methods in the <test> tag are executed.
+```
+@AfterTest
+public void afterTestExample(){
+    System.out.println("AfterTest Example");
+}
+```
+@AfterSuite: Runs after all tests in the suite have completed.
+```
+@AfterSuite
+public void afterSuiteExample(){
+    System.out.println("AfterSuite Example");
+}
+```
+## Browser Commands
+### Browser Command Example
+```
+@BeforeSuite
+public void openBrowser(){
+    WebDriverManager.chromedriver().setup();
+    driver = new ChromeDriver();
+    driver.manage().window().maximize();
+}
+```
+Description: Initializes the Chrome browser before the suite begins, maximizes the window.
+```
+@Test
+public void getCurrentURL() throws InterruptedException {
+    driver.get(url);
+    Thread.sleep(6000);
+    String currentURL = driver.getCurrentUrl();
+    System.out.println(currentURL);
+    if(url.equals(currentURL)){
+        System.out.println("Current URL is same as Mentioned URL");
+    }else{
+        System.out.println("Not Same");
+    }
+}
+```
+Description: Retrieves and prints the current URL of the browser, comparing it with the expected URL.
+```
+@AfterSuite
+public void closeBrowser(){
+    driver.quit();
+}
+```
+Description: Closes the browser after the suite ends.
 
 ---
 
