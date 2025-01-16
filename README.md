@@ -96,8 +96,8 @@ public void closeChromeBrowser(){
     driver.close();
 }
 ```
-  - [Firefox Browser Setup](browser/FireFoxBrowserInit.java)
-  - [Edge Browser Setup](browser/CrossBrowserInit.java)
+  - [Firefox Browser Setup](Selenium_Basics/src/test/java/com/basics/browser/FireFoxBrowserInit.java)
+  - [Edge Browser Setup](Selenium_Basics/src/test/java/com/basics/browser/MicrosoftBrowserInit.java)
 - **Launching Browsers:**
   - Run tests using Chrome, Firefox, Edge, and Safari.
 - **Dependencies:**
