@@ -78,7 +78,7 @@ public void startChromeBrowser(){
     driver = new ChromeDriver();
     driver.manage().window().maximize();
 }
----
+```
 Description: Initializes the Chrome browser before the suite begins, sets up the WebDriver, and maximizes the browser window.
 ```
 @Test
@@ -86,7 +86,7 @@ public void openURL() throws InterruptedException {
     driver.get("https://mvnrepository.com/");
     Thread.sleep(15000);
 }
----
+```
 Description: Opens the specified URL in the browser and waits for 15 seconds.
 
 Close Chrome Browser
@@ -95,7 +95,7 @@ Close Chrome Browser
 public void closeChromeBrowser(){
     driver.close();
 }
----
+```
   - [Firefox Browser Setup](browser/FireFoxBrowserInit.java)
   - [Edge Browser Setup](browser/CrossBrowserInit.java)
 - **Launching Browsers:**
