@@ -133,6 +133,8 @@ public void startBrowser(){
 ```
 Description: Configures the browser dynamically based on the system property passed (e.g., chrome, firefox, edge).
 
+- [Cross Browser Configuration](Selenium_Basics/src/test/java/com/basics/browser/CrossBrowserInit.java)
+- 
 ### Headless Mode Testing
 ```
 @BeforeSuite
@@ -147,70 +149,74 @@ public void openBrowser(){
 ```
 Description: Initializes Chrome browser in headless mode (without UI) to run tests without a graphical interface.
 
+- [Headless Browser Testing](Selenium_Basics/src/test/java/com/basics/browser/HeadlessChrome.java)
+
 ### TestNG Lifecycle
-@BeforeSuite: Runs before the entire suite starts.
+**`@BeforeSuite: Runs before the entire suite starts.`**
 ```
 @BeforeSuite
 public void beforeSuiteExample(){
     System.out.println("BeforeSuite Example");
 }
 ```
-@BeforeTest: Runs before the first test method is invoked.
+**`@BeforeTest: Runs before the first test method is invoked.`**
 ```
 @BeforeTest
 public void beforeTestExample(){
     System.out.println("BeforeTest Example");
 }
 ```
-@BeforeClass: Runs before the first method of the class is invoked.
+**`@BeforeClass: Runs before the first method of the class is invoked.`**
 ```
 @BeforeClass
 public void beforeClassExample(){
     System.out.println("BeforeClass Example");
 }
 ```
-@BeforeMethod: Runs before each test method.
+**`@BeforeMethod: Runs before each test method.`**
 ```
 @BeforeMethod
 public void beforeMethodExample(){
     System.out.println("BeforeMethod Example");
 }
 ```
-@Test: The actual test method.
+**`@Test: The actual test method.`**
 ```
 @Test(priority = 1)
 public void testExample(){
     System.out.println("Test Example");
 }
 ```
-@AfterMethod: Runs after each test method.
+**`@AfterMethod: Runs after each test method.`**
 ```
 @AfterMethod
 public void afterMethodExample(){
     System.out.println("AfterMethod Example");
 }
 ```
-@AfterClass: Runs after the last method of the class.
+**`@AfterClass: Runs after the last method of the class.`**
 ```
 @AfterClass
 public void afterClassExample(){
     System.out.println("AfterClass Example");
 }
 ```
-@AfterTest: Runs after all the test methods in the <test> tag are executed.
+**`@AfterTest: Runs after all the test methods in the <test> tag are executed.`**
 ```
 @AfterTest
 public void afterTestExample(){
     System.out.println("AfterTest Example");
 }
 ```
-@AfterSuite: Runs after all tests in the suite have completed.
+**`@AfterSuite: Runs after all tests in the suite have completed.`**
 ```
 @AfterSuite
 public void afterSuiteExample(){
     System.out.println("AfterSuite Example");
 }
 ```
+- [TestNG Code](Selenium_Basics/src/test/java/com/basics/TestNG/testNG_examples.java)
+
 ## Browser Commands
 ### Browser Command Example
 ```
@@ -245,6 +251,8 @@ public void closeBrowser(){
 ```
 Description: Closes the browser after the suite ends.
 
+- [Full Code Here](Selenium_Basics/src/test/java/com/basics/browserCommand/BrowserCommandExample.java)
+
 ---
 
 ## Locating and Interacting with Web Elements
@@ -257,7 +265,7 @@ Description: Closes the browser after the suite ends.
   ```
 Description: Locates an element by its unique id attribute.
 
-Full Code Link: Locate By ID
+- [Locate By ID Code](Selenium_Basics/src/test/java/com/basics/locators/LocateByID.java)
 
 **`Name`**
 ```
@@ -266,7 +274,7 @@ element.sendKeys("01881286434");
 ```
 Description: Locates an element by its name attribute.
 
-Full Code Link: Locate By Name
+- [Locate By ID Code](Selenium_Basics/src/test/java/com/basics/locators/LocateByName.java)
 
 **`Class Name`**
 ```
@@ -275,7 +283,7 @@ element.click();
 ```
 Description: Locates an element by its class attribute.
 
-Full Code Link: Locate By Class Name
+- [Locate By ID Code](Selenium_Basics/src/test/java/com/basics/locators/LocateByClassName.java)
 
 **`LinkText`**
 ```
@@ -284,7 +292,7 @@ element.click();
 ```
 Description: Locates a link by its visible text.
 
-Full Code Link: Locate By Link Text
+- [Locate By ID Code](Selenium_Basics/src/test/java/com/basics/locators/LocateByLinkText.java)
 
 **`Partial LinkText`**
 ```
@@ -293,7 +301,7 @@ element.click();
 ```
 Description: Locates a link using part of its visible text.
 
-Full Code Link: Locate By Partial Link Text
+- [Locate By ID Code](Selenium_Basics/src/test/java/com/basics/locators/LocateByPartialLinkText.java)
 
 **`Tag Name`**
 ```
@@ -305,7 +313,7 @@ for (WebElement element : elements) {
 ```
 Description: Locates all elements with a specific HTML tag.
 
-Full Code Link: Locate By Tag Name
+- [Locate By ID Code](Selenium_Basics/src/test/java/com/basics/locators/LocateByTagName.java)
 
 **`CSS Selector`**
 ```
@@ -314,7 +322,7 @@ element.sendKeys("Math");
 ```
 Description: Locates an element using a CSS selector.
 
-Full Code Link: Locate By CSS Selector
+- [Locate By ID Code](Selenium_Basics/src/test/java/com/basics/locators/LocateBycssSelector.java)
 
 **`XPath`**
 ```
@@ -323,7 +331,7 @@ element.sendKeys("Dabarjun Mazumdar");
 ```
 Description: Locates an element using an XPath expression.
 
-Full Code Link: Locate By XPath
+- [Locate By ID Code](Selenium_Basics/src/test/java/com/basics/locators/LocateByXPath.java)
 
 ### **Interacting with Web Elements**
 
@@ -335,7 +343,8 @@ Full Code Link: Locate By XPath
   element.sendKeys("Dabarjun Mazumdar");
   ```
 Description: Sends input to a text field or text area.
-Full Code Link: Locate By XPath
+
+- [Send Keys Method Code]()
 
  **`clear`**
  ```
@@ -344,7 +353,8 @@ element.sendKeys("Dabarjun Mazumdar");
 element.clear();
 ```
 Description: Clears the content of a text field.
-Full Code Link: Clear Method
+
+- [Clear Method Code](Selenium_Basics/src/test/java/com/basics/webElementsCommands/clearMethod.java)
 
  **`getAttribute`**
 ```
@@ -353,7 +363,8 @@ element.sendKeys("Dabarjun Mazumdar");
 System.out.println(element.getAttribute("placeholder"));
 ```
 Description: Retrieves the value of a specified attribute.
-Full Code Link: Get Attribute Method
+
+- [Get Attribute Method Code](Selenium_Basics/src/test/java/com/basics/webElementsCommands/getAttributeMethod.java)
 
  **`getCssValue`**
 ```
@@ -362,7 +373,8 @@ element.sendKeys("Dabarjun Mazumdar");
 System.out.println(element.getCssValue("color"));
 ```
 Description: Retrieves a specific CSS property value.
-Full Code Link: Get CSS Value Method
+
+- [Get CSS Value Method Code](Selenium_Basics/src/test/java/com/basics/webElementsCommands/getCSSValueMethod.java)
 
  **`isDisplayed`**
 ```
@@ -372,7 +384,8 @@ if (element.isDisplayed()) {
 }
 ```
 Description: Checks if the element is visible.
-Full Code Link: Is Displayed Method
+
+- [IS Displayed Method Code](Selenium_Basics/src/test/java/com/basics/webElementsCommands/isDisplayedMethod.java)
 
 ### **Navigation Commands**
 
@@ -382,7 +395,8 @@ driver.get("https://www.tutorialspoint.com/selenium/practice/selenium_automation
 driver.navigate().to("https://www.daraz.com.bd/?m_station=page#?");
 ```
 Description: Navigates to another URL after opening the initial page.
-Full Code Link: Open Another URL
+
+- [Navigate To Another URL Code](Selenium_Basics/src/test/java/com/basics/browserNavigation/openAnotherURL.java)
 
 **`Navigate Back to the Previous URL`**
 ```
@@ -391,7 +405,8 @@ driver.navigate().to("https://www.daraz.com.bd/?m_station=page#?");
 driver.navigate().back();
 ```
 Description: Returns to the previous page in the browser's history.
-Full Code Link: Back to Previous URL
+
+- [Navigate Back To The Previous URL Code](Selenium_Basics/src/test/java/com/basics/browserNavigation/backToPreviousURL.java)
 
 **`Navigate Forward to the Next URL`**
 ```
@@ -401,7 +416,8 @@ driver.navigate().back();
 driver.navigate().forward();
 ```
 Description: Moves forward to the next page in the browser's history after navigating back.
-Full Code Link: Forward to Next URL
+
+- [Navigate Forward To The Next URL Code](Selenium_Basics/src/test/java/com/basics/browserNavigation/ForwardToNextURL.java)
 
 **`Reload/Refresh the Current Page`**
 ```
@@ -410,9 +426,8 @@ driver.navigate().to("https://www.daraz.com.bd/?m_station=page#?");
 driver.navigate().refresh();
 ```
 Description: Reloads the current page.
-Full Code Link: Reload the Page
 
-
+- [Reload The Current Page Code](Selenium_Basics/src/test/java/com/basics/browserNavigation/reloadThePage.java)
 
 ---
 
