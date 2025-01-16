@@ -1,6 +1,6 @@
 # Selenium Basic Automation Testing with Java
 
-This repository contains a step-by-step guide to mastering Selenium WebDriver with Java. It is based on a series of lectures designed to teach key concepts of Selenium automation testing, including browser interactions, locators, TestNG, assertions, and advanced topics like the Page Object Model.
+This repository is a practical guide to mastering Selenium WebDriver with Java, covering essential topics for automation testing, including browser setup, cross-browser testing, headless mode, locators, TestNG, assertions, handling alerts and frames, navigation commands, and the Page Object Model framework. Perfect for beginners and professionals aiming to enhance their test automation skills.
 
 ---
 
@@ -8,15 +8,15 @@ This repository contains a step-by-step guide to mastering Selenium WebDriver wi
 
 1. [Introduction](#introduction)
 2. [Prerequisites](#prerequisites)
-3. [Lecture Topics](#lecture-topics)
-   - [Lecture 1: Introduction to Selenium WebDriver](#lecture-1-introduction-to-selenium-webdriver)
-   - [Lecture 2: Cross Browser Testing and TestNG](#lecture-2-cross-browser-testing-and-testng)
-   - [Lecture 3: Locating and Interacting with Web Elements](#lecture-3-locating-and-interacting-with-web-elements)
-   - [Lecture 4: Assertions and Advanced User Actions](#lecture-4-assertions-and-advanced-user-actions)
-   - [Lecture 5: Handling Alerts, Waits, and Frames](#lecture-5-handling-alerts-waits-and-frames)
-   - [Lecture 6: Working with Windows, Tabs, and HTML Tables](#lecture-6-working-with-windows-tabs-and-html-tables)
-   - [Lecture 7: Page Object Model (POM)](#lecture-7-page-object-model-pom)
-   - [Lecture 8: Advanced Page Object Model](#lecture-8-advanced-page-object-model)
+3. [Topics Covered](#topics-covered)
+    - [Introduction to Selenium WebDriver](#introduction-to-selenium-webdriver)
+    - [Cross-Browser Testing and TestNG](#cross-browser-testing-and-testng)
+    - [Locating and Interacting with Web Elements](#locating-and-interacting-with-web-elements)
+    - [Assertions and Advanced User Actions](#assertions-and-advanced-user-actions)
+    - [Handling Alerts, Waits, and Frames](#handling-alerts-waits-and-frames)
+    - [Working with Windows, Tabs, and HTML Tables](#working-with-windows-tabs-and-html-tables)
+    - [Page Object Model (POM)](#page-object-model-pom)
+    - [Advanced Page Object Model](#advanced-page-object-model)
 4. [How to Run](#how-to-run)
 5. [References](#references)
 
@@ -58,16 +58,53 @@ This repository aims to provide a practical learning experience for beginners in
 
 ---
 
-## Lecture Topics
+## Topics
+## Introduction to Selenium WebDriver
 
-### Lecture 1: Introduction to Selenium WebDriver
-- **Overview of Selenium WebDriver and its features.**
-- **Setting up Selenium WebDriver Environment:**
-  - [Chrome Browser Setup](browser/ChromeBrowserInit.java)
+### Overview of Selenium WebDriver and its features
+Selenium WebDriver is a powerful tool for automating web browsers. It provides APIs to control and interact with web elements, making it ideal for functional and regression testing.
+
+### Setting up Selenium WebDriver Environment
+
+To get started with Selenium WebDriver, we need to configure the environment for different browsers. Below are the necessary setups for Chrome, Firefox, and Edge.
+
+## Chrome Browser Setup
+
+### Start Chrome Browser
+
+```java
+@BeforeSuite
+public void startChromeBrowser(){
+    WebDriverManager.chromedriver().setup();
+    driver = new ChromeDriver();
+    driver.manage().window().maximize();
+}
+Description: Initializes the Chrome browser before the suite begins, sets up the WebDriver, and maximizes the browser window.
+
+Open URL
+java
+Copy
+Edit
+@Test
+public void openURL() throws InterruptedException {
+    driver.get("https://mvnrepository.com/");
+    Thread.sleep(15000);
+}
+Description: Opens the specified URL in the browser and waits for 15 seconds.
+
+Close Chrome Browser
+java
+Copy
+Edit
+@AfterSuite
+public void closeChromeBrowser(){
+    driver.close();
+}
+
   - [Firefox Browser Setup](browser/FireFoxBrowserInit.java)
   - [Edge Browser Setup](browser/CrossBrowserInit.java)
 - **Launching Browsers:**
-  - How to run tests using Chrome, Firefox, Edge, and Safari.
+  - Run tests using Chrome, Firefox, Edge, and Safari.
 - **Dependencies:**
   - [selenium-java](https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java)
   - [webdrivermanager](https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager)
