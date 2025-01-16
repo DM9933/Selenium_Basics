@@ -106,7 +106,7 @@ public void closeChromeBrowser(){
   - [testng](https://mvnrepository.com/artifact/org.testng/testng)
 ---
 
-## Lecture 2: Cross Browser Testing and TestNG
+## Cross Browser Testing and TestNG
 
 ### Cross Browser Testing
 #### Dynamic Browser Configuration
@@ -247,13 +247,172 @@ Description: Closes the browser after the suite ends.
 
 ---
 
-### Lecture 3: Locating and Interacting with Web Elements
-- **Locators in Selenium WebDriver**:
-  - ID, Name, LinkText, Partial LinkText, Tag Name, Class Name, CSS Selector, XPath, Custom Xpath, Custom CSS.
-- **Interacting with Web Elements**:
-  - WebElement Commands: `sendKeys`, `click`, `clear`, `getAttribute`, `getCssValue`, `getText`, `isDisplayed`, `isEnabled`, `isSelected`.
-- **Navigation Commands**:
-  - Navigate Forward, Backward, Refresh.
+## Locating and Interacting with Web Elements
+
+### **Locators in Selenium WebDriver**
+- **`ID`**
+  ```
+  WebElement element = driver.findElement(By.id("name"));
+  element.sendKeys("Dabarjun Mazumdar");
+  ```
+Description: Locates an element by its unique id attribute.
+
+Full Code Link: Locate By ID
+
+**`Name`**
+```
+WebElement element = driver.findElement(By.name("mobile"));
+element.sendKeys("01881286434");
+```
+Description: Locates an element by its name attribute.
+
+Full Code Link: Locate By Name
+
+**`Class Name`**
+```
+WebElement element = driver.findElement(By.className("btn"));
+element.click();
+```
+Description: Locates an element by its class attribute.
+
+Full Code Link: Locate By Class Name
+
+**`LinkText`**
+```
+WebElement element = driver.findElement(By.linkText("Home"));
+element.click();
+```
+Description: Locates a link by its visible text.
+
+Full Code Link: Locate By Link Text
+
+**`Partial LinkText`**
+```
+WebElement element = driver.findElement(By.partialLinkText("Bad"));
+element.click();
+```
+Description: Locates a link using part of its visible text.
+
+Full Code Link: Locate By Partial Link Text
+
+**`Tag Name`**
+```
+List<WebElement> elements = driver.findElements(By.tagName("a"));
+System.out.println(elements.size());
+for (WebElement element : elements) {
+    System.out.println(element.getText());
+}
+```
+Description: Locates all elements with a specific HTML tag.
+
+Full Code Link: Locate By Tag Name
+
+**`CSS Selector`**
+```
+WebElement element = driver.findElement(By.cssSelector("input[name='subjects']"));
+element.sendKeys("Math");
+```
+Description: Locates an element using a CSS selector.
+
+Full Code Link: Locate By CSS Selector
+
+**`XPath`**
+```
+WebElement element = driver.findElement(By.xpath("//input[@class='form-control']"));
+element.sendKeys("Dabarjun Mazumdar");
+```
+Description: Locates an element using an XPath expression.
+
+Full Code Link: Locate By XPath
+
+### **Interacting with Web Elements**
+
+#### **WebElement Commands**
+
+- **`sendKeys`**
+  ```
+  WebElement element = driver.findElement(By.xpath("//input[@class='form-control']"));
+  element.sendKeys("Dabarjun Mazumdar");
+  ```
+Description: Sends input to a text field or text area.
+Full Code Link: Locate By XPath
+
+ **`clear`**
+ ```
+WebElement element = driver.findElement(By.xpath("//input[@class='form-control']"));
+element.sendKeys("Dabarjun Mazumdar");
+element.clear();
+```
+Description: Clears the content of a text field.
+Full Code Link: Clear Method
+
+ **`getAttribute`**
+```
+WebElement element = driver.findElement(By.xpath("//input[@class='form-control']"));
+element.sendKeys("Dabarjun Mazumdar");
+System.out.println(element.getAttribute("placeholder"));
+```
+Description: Retrieves the value of a specified attribute.
+Full Code Link: Get Attribute Method
+
+ **`getCssValue`**
+```
+WebElement element = driver.findElement(By.xpath("//input[@class='form-control']"));
+element.sendKeys("Dabarjun Mazumdar");
+System.out.println(element.getCssValue("color"));
+```
+Description: Retrieves a specific CSS property value.
+Full Code Link: Get CSS Value Method
+
+ **`isDisplayed`**
+```
+WebElement element = driver.findElement(By.xpath("//input[@placeholder='First Name']"));
+if (element.isDisplayed()) {
+    System.out.println("Element is displayed.");
+}
+```
+Description: Checks if the element is visible.
+Full Code Link: Is Displayed Method
+
+### **Navigation Commands**
+
+**`Navigate to Another URL`**
+```
+driver.get("https://www.tutorialspoint.com/selenium/practice/selenium_automation_practice.php");
+driver.navigate().to("https://www.daraz.com.bd/?m_station=page#?");
+```
+Description: Navigates to another URL after opening the initial page.
+Full Code Link: Open Another URL
+
+**`Navigate Back to the Previous URL`**
+```
+driver.get("https://www.tutorialspoint.com/selenium/practice/selenium_automation_practice.php");
+driver.navigate().to("https://www.daraz.com.bd/?m_station=page#?");
+driver.navigate().back();
+```
+Description: Returns to the previous page in the browser's history.
+Full Code Link: Back to Previous URL
+
+**`Navigate Forward to the Next URL`**
+```
+driver.get("https://www.tutorialspoint.com/selenium/practice/selenium_automation_practice.php");
+driver.navigate().to("https://www.daraz.com.bd/?m_station=page#?");
+driver.navigate().back();
+driver.navigate().forward();
+```
+Description: Moves forward to the next page in the browser's history after navigating back.
+Full Code Link: Forward to Next URL
+
+**`Reload/Refresh the Current Page`**
+```
+driver.get("https://www.tutorialspoint.com/selenium/practice/selenium_automation_practice.php");
+driver.navigate().to("https://www.daraz.com.bd/?m_station=page#?");
+driver.navigate().refresh();
+```
+Description: Reloads the current page.
+Full Code Link: Reload the Page
+
+
 
 ---
 
