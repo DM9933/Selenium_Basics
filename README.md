@@ -134,7 +134,7 @@ public void startBrowser(){
 Description: Configures the browser dynamically based on the system property passed (e.g., chrome, firefox, edge).
 
 - [Cross Browser Configuration](Selenium_Basics/src/test/java/com/basics/browser/CrossBrowserInit.java)
-- 
+  
 ### Headless Mode Testing
 ```
 @BeforeSuite
@@ -274,7 +274,7 @@ element.sendKeys("01881286434");
 ```
 Description: Locates an element by its name attribute.
 
-- [Locate By ID Code](Selenium_Basics/src/test/java/com/basics/locators/LocateByName.java)
+- [Locate By Name Code](Selenium_Basics/src/test/java/com/basics/locators/LocateByName.java)
 
 **`Class Name`**
 ```
@@ -283,7 +283,7 @@ element.click();
 ```
 Description: Locates an element by its class attribute.
 
-- [Locate By ID Code](Selenium_Basics/src/test/java/com/basics/locators/LocateByClassName.java)
+- [Locate By Class Name Code](Selenium_Basics/src/test/java/com/basics/locators/LocateByClassName.java)
 
 **`LinkText`**
 ```
@@ -292,7 +292,7 @@ element.click();
 ```
 Description: Locates a link by its visible text.
 
-- [Locate By ID Code](Selenium_Basics/src/test/java/com/basics/locators/LocateByLinkText.java)
+- [Locate By LinkText Code](Selenium_Basics/src/test/java/com/basics/locators/LocateByLinkText.java)
 
 **`Partial LinkText`**
 ```
@@ -301,7 +301,7 @@ element.click();
 ```
 Description: Locates a link using part of its visible text.
 
-- [Locate By ID Code](Selenium_Basics/src/test/java/com/basics/locators/LocateByPartialLinkText.java)
+- [Locate By Partial LinkText Code](Selenium_Basics/src/test/java/com/basics/locators/LocateByPartialLinkText.java)
 
 **`Tag Name`**
 ```
@@ -313,7 +313,7 @@ for (WebElement element : elements) {
 ```
 Description: Locates all elements with a specific HTML tag.
 
-- [Locate By ID Code](Selenium_Basics/src/test/java/com/basics/locators/LocateByTagName.java)
+- [Locate By Tag Name Code](Selenium_Basics/src/test/java/com/basics/locators/LocateByTagName.java)
 
 **`CSS Selector`**
 ```
@@ -322,7 +322,7 @@ element.sendKeys("Math");
 ```
 Description: Locates an element using a CSS selector.
 
-- [Locate By ID Code](Selenium_Basics/src/test/java/com/basics/locators/LocateBycssSelector.java)
+- [Locate By CSS Selector Code](Selenium_Basics/src/test/java/com/basics/locators/LocateBycssSelector.java)
 
 **`XPath`**
 ```
@@ -331,7 +331,7 @@ element.sendKeys("Dabarjun Mazumdar");
 ```
 Description: Locates an element using an XPath expression.
 
-- [Locate By ID Code](Selenium_Basics/src/test/java/com/basics/locators/LocateByXPath.java)
+- [Locate By Xpath Code](Selenium_Basics/src/test/java/com/basics/locators/LocateByXPath.java)
 
 ### **Interacting with Web Elements**
 
