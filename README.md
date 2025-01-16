@@ -250,7 +250,7 @@ Description: Closes the browser after the suite ends.
 ## Locating and Interacting with Web Elements
 
 ### **Locators in Selenium WebDriver**
-- **`ID`**
+**`ID`**
   ```
   WebElement element = driver.findElement(By.id("name"));
   element.sendKeys("Dabarjun Mazumdar");
@@ -329,7 +329,7 @@ Full Code Link: Locate By XPath
 
 #### **WebElement Commands**
 
-- **`sendKeys`**
+**`sendKeys`**
   ```
   WebElement element = driver.findElement(By.xpath("//input[@class='form-control']"));
   element.sendKeys("Dabarjun Mazumdar");
