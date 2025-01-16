@@ -89,7 +89,7 @@ public void openURL() throws InterruptedException {
 ```
 Description: Opens the specified URL in the browser and waits for 15 seconds.
 
-Close Chrome Browser
+### Close Chrome Browser
 ```
 @AfterSuite
 public void closeChromeBrowser(){
