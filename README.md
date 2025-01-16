@@ -71,36 +71,31 @@ To get started with Selenium WebDriver, we need to configure the environment for
 ## Chrome Browser Setup
 
 ### Start Chrome Browser
-
-```java
+```
 @BeforeSuite
 public void startChromeBrowser(){
     WebDriverManager.chromedriver().setup();
     driver = new ChromeDriver();
     driver.manage().window().maximize();
 }
+---
 Description: Initializes the Chrome browser before the suite begins, sets up the WebDriver, and maximizes the browser window.
-
-Open URL
-java
-Copy
-Edit
+```
 @Test
 public void openURL() throws InterruptedException {
     driver.get("https://mvnrepository.com/");
     Thread.sleep(15000);
 }
+---
 Description: Opens the specified URL in the browser and waits for 15 seconds.
 
 Close Chrome Browser
-java
-Copy
-Edit
+```
 @AfterSuite
 public void closeChromeBrowser(){
     driver.close();
 }
-
+---
   - [Firefox Browser Setup](browser/FireFoxBrowserInit.java)
   - [Edge Browser Setup](browser/CrossBrowserInit.java)
 - **Launching Browsers:**
@@ -109,7 +104,6 @@ public void closeChromeBrowser(){
   - [selenium-java](https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java)
   - [webdrivermanager](https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager)
   - [testng](https://mvnrepository.com/artifact/org.testng/testng)
-
 ---
 
 ### Lecture 2: Cross Browser Testing and TestNG
